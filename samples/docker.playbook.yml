@@ -1,0 +1,10 @@
+---
+- hosts: qnap
+  tasks:
+  - name: hello-world container
+    docker_container:
+      name: my-hello-world
+      image: hello-world
+      state: started
+      tty: true
+      detach: true
