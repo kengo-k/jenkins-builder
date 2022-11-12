@@ -1,0 +1,11 @@
+---
+- hosts: localhost,qnap
+  tasks:
+  - name: exec shell
+    shell: |
+      echo Hello,World!
+      echo "I am $(whoami)"
+    register: shell_result
+  - name: output shell result
+    debug:
+      msg: "{{ shell_result }}"
